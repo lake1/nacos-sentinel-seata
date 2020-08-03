@@ -1,0 +1,687 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.5.RELEASE</version>
+        <relativePath/>
+    </parent>
+    <groupId>spring-cloud-plus</groupId>
+    <artifactId>spring-cloud-plus</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+
+    <modules>
+        <module>common</module>
+        <module>spring-cloud-feign-client</module>
+        <module>spring-cloud-feign-server</module>
+        <module>spring-cloud-feign-api</module>
+    </modules>
+
+    <properties>
+        <utf8>UTF-8</utf8>
+        <project.build.sourceEncoding>${utf8}</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>${utf8}</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <spring-boot.version>2.0.0.RELEASE</spring-boot.version>
+        <spring-boot-admin.version>2.0.0</spring-boot-admin.version>
+        <mybatis-plus-boot-starter.version>3.2.0</mybatis-plus-boot-starter.version>
+        <swagger2.version>2.6.1</swagger2.version>
+        <commons-lang3.version>3.9</commons-lang3.version>
+        <commons-collections4.version>4.4</commons-collections4.version>
+        <commons-io.version>2.6</commons-io.version>
+        <commons-codec.version>1.13</commons-codec.version>
+        <commons-net.version>3.6</commons-net.version>
+        <commons-pool2.version>2.7.0</commons-pool2.version>
+        <commons-text.version>1.8</commons-text.version>
+        <fastjson.version>1.2.62</fastjson.version>
+        <velocity.version>1.7</velocity.version>
+        <mysql.version>5.1.47</mysql.version>
+        <druid.version>1.1.20</druid.version>
+        <reflections.version>0.9.11</reflections.version>
+        <jansi.version>1.18</jansi.version>
+        <lombok.version>1.18.10</lombok.version>
+        <hutool.version>4.6.10</hutool.version>
+        <junit.version>4.12</junit.version>
+        <ini4j.version>0.5.4</ini4j.version>
+        <mapstruct.version>1.3.0.Final</mapstruct.version>
+        <shiro.version>1.4.1</shiro.version>
+        <jwt.version>3.8.3</jwt.version>
+
+        <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+        <maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
+        <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
+        <maven-javadoc-plugin.version>3.1.1</maven-javadoc-plugin.version>
+        <mapper-spring-boot-starter.version>2.1.5</mapper-spring-boot-starter.version>
+
+        <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <spring-boot.version>2.3.0.RELEASE</spring-boot.version>
+        <spring-cloud-alibaba.version>2.2.1.RELEASE</spring-cloud-alibaba.version>
+        <spring-cloud.version>Hoxton.SR3</spring-cloud.version>
+
+
+    </properties>
+
+    <!--    <dependencies>-->
+    <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-parent -->
+    <!--        <dependency>-->
+    <!--            <groupId>org.springframework.boot</groupId>-->
+    <!--            <artifactId>spring-boot-starter-parent</artifactId>-->
+    <!--            <version>2.1.10.RELEASE</version>-->
+    <!--            <type>pom</type>-->
+    <!--        </dependency>-->
+
+    <!--    </dependencies>-->
+    <!--    <dependencyManagement>-->
+    <!--        <dependencies>-->
+    <!--            <dependency>-->
+    <!--                <groupId>spring-cloud-plus</groupId>-->
+    <!--                <artifactId>spring-boot-service-api</artifactId>-->
+    <!--                <version>1.0-SNAPSHOT</version>-->
+    <!--            </dependency>-->
+
+    <!--            <dependency>-->
+    <!--                <groupId>spring-cloud-plus</groupId>-->
+    <!--                <artifactId>common-service-base</artifactId>-->
+    <!--                <version>1.0-SNAPSHOT</version>-->
+    <!--            </dependency>-->
+
+    <!--            <dependency>-->
+    <!--                <groupId>org.springframework.boot</groupId>-->
+    <!--                <artifactId>spring-boot-dependencies</artifactId>-->
+    <!--                <version>${spring-boot.version}</version>-->
+    <!--                <type>pom</type>-->
+    <!--                <scope>import</scope>-->
+    <!--            </dependency>-->
+    <!--            <dependency>-->
+    <!--                <groupId>org.springframework.cloud</groupId>-->
+    <!--                <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>-->
+    <!--                <version>2.0.0.RELEASE</version>-->
+    <!--            </dependency>-->
+    <!--            <dependency>-->
+    <!--                <groupId>org.springframework.cloud</groupId>-->
+    <!--                <artifactId>spring-cloud-starter-gateway</artifactId>-->
+    <!--                <version>2.0.0.RELEASE</version>-->
+    <!--            </dependency>-->
+
+    <!--            <dependency>-->
+    <!--                <groupId>org.springframework.cloud</groupId>-->
+    <!--                <artifactId>spring-cloud-context</artifactId>-->
+    <!--                <version>2.0.0.RELEASE</version>-->
+    <!--            </dependency>-->
+    <!--            <dependency>-->
+    <!--                <groupId>org.springframework.cloud</groupId>-->
+    <!--                <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>-->
+    <!--                <version>2.0.0.RELEASE</version>-->
+    <!--            </dependency>-->
+    <!--            <dependency>-->
+    <!--                <groupId>com.google.guava</groupId>-->
+    <!--                <artifactId>guava</artifactId>-->
+    <!--                <version>23.0</version>-->
+    <!--            </dependency>-->
+    <!--            <dependency>-->
+    <!--                <groupId>org.apache.commons</groupId>-->
+    <!--                <artifactId>commons-pool2</artifactId>-->
+    <!--                <version>2.7.0</version>-->
+    <!--            </dependency>-->
+    <!--            <dependency>-->
+    <!--                <groupId>org.mapstruct</groupId>-->
+    <!--                <artifactId>mapstruct</artifactId>-->
+    <!--                <version>1.3.0.Final</version>-->
+    <!--            </dependency>-->
+    <!--            <dependency>-->
+    <!--                <groupId>org.mybatis</groupId>-->
+    <!--                <artifactId>mybatis-spring</artifactId>-->
+    <!--                <version>2.0.0</version>-->
+    <!--            </dependency>-->
+    <!--            <dependency>-->
+    <!--                <groupId>com.fasterxml.jackson.core</groupId>-->
+    <!--                <artifactId>jackson-annotations</artifactId>-->
+    <!--                <version>2.10.0</version>-->
+    <!--            </dependency>-->
+    <!--            <dependency>-->
+    <!--                <groupId>com.fasterxml.jackson.core</groupId>-->
+    <!--                <artifactId>jackson-core</artifactId>-->
+    <!--                <version>2.10.0</version>-->
+    <!--            </dependency>-->
+    <!--            <dependency>-->
+    <!--                <groupId>com.fasterxml.jackson.core</groupId>-->
+    <!--                <artifactId>jackson-databind</artifactId>-->
+    <!--                <version>2.10.0</version>-->
+    <!--            </dependency>-->
+
+    <!--            <dependency>-->
+    <!--                <groupId>com.fasterxml.jackson.datatype</groupId>-->
+    <!--                <artifactId>jackson-datatype-jdk8</artifactId>-->
+    <!--                <version>2.10.0</version>-->
+    <!--            </dependency>-->
+    <!--            <dependency>-->
+    <!--                <groupId>commons-codec</groupId>-->
+    <!--                <artifactId>commons-codec</artifactId>-->
+    <!--                <version>1.13</version>-->
+    <!--            </dependency>-->
+    <!--            <dependency>-->
+    <!--                <groupId>commons-collections</groupId>-->
+    <!--                <artifactId>commons-collections</artifactId>-->
+    <!--                <version>3.2.2</version>-->
+    <!--            </dependency>-->
+    <!--            <dependency>-->
+    <!--                <groupId>commons-lang</groupId>-->
+    <!--                <artifactId>commons-lang</artifactId>-->
+    <!--                <version>2.6</version>-->
+    <!--            </dependency>-->
+    <!--            <dependency>-->
+    <!--                <groupId>io.swagger</groupId>-->
+    <!--                <artifactId>swagger-models</artifactId>-->
+    <!--                <version>1.5.16</version>-->
+    <!--            </dependency>-->
+    <!--            <dependency>-->
+    <!--                <groupId>org.apache.commons</groupId>-->
+    <!--                <artifactId>commons-lang3</artifactId>-->
+    <!--                <version>3.9</version>-->
+    <!--            </dependency>-->
+    <!--            <dependency>-->
+    <!--                <groupId>org.mybatis</groupId>-->
+    <!--                <artifactId>mybatis</artifactId>-->
+    <!--                <version>3.5.2</version>-->
+    <!--            </dependency>-->
+    <!--            <dependency>-->
+    <!--                <groupId>org.projectlombok</groupId>-->
+    <!--                <artifactId>lombok</artifactId>-->
+    <!--                <version>1.18.10</version>-->
+    <!--            </dependency>-->
+    <!--            <dependency>-->
+    <!--                <groupId>de.codecentric</groupId>-->
+    <!--                <artifactId>spring-boot-admin-starter-client</artifactId>-->
+    <!--                <version>2.0.0</version>-->
+    <!--            </dependency>-->
+    <!--            <dependency>-->
+    <!--                <groupId>de.codecentric</groupId>-->
+    <!--                <artifactId>spring-boot-admin-server</artifactId>-->
+    <!--                <version>2.0.0</version>-->
+    <!--            </dependency>-->
+    <!--            <dependency>-->
+    <!--                <groupId>de.codecentric</groupId>-->
+    <!--                <artifactId>spring-boot-admin-server-ui</artifactId>-->
+    <!--                <version>2.0.0</version>-->
+    <!--            </dependency>-->
+    <!--            <dependency>-->
+    <!--                <groupId>de.codecentric</groupId>-->
+    <!--                <artifactId>spring-boot-admin-starter-server</artifactId>-->
+    <!--                <version>2.0.0</version>-->
+    <!--            </dependency>-->
+    <!--            <dependency>-->
+    <!--                <groupId>spring-cloud-plus</groupId>-->
+    <!--                <artifactId>common-controller-base</artifactId>-->
+    <!--                <version>1.0-SNAPSHOT</version>-->
+    <!--            </dependency>-->
+    <!--            <dependency>-->
+    <!--                <groupId>spring-cloud-plus</groupId>-->
+    <!--                <artifactId>common-cache</artifactId>-->
+    <!--                <version>1.0-SNAPSHOT</version>-->
+    <!--            </dependency>-->
+    <!--            <dependency>-->
+    <!--                <groupId>spring-cloud-plus</groupId>-->
+    <!--                <artifactId>common-constant</artifactId>-->
+    <!--                <version>1.0-SNAPSHOT</version>-->
+    <!--            </dependency>-->
+    <!--            <dependency>-->
+    <!--                <groupId>spring-cloud-plus</groupId>-->
+    <!--                <artifactId>common-constraints</artifactId>-->
+    <!--                <version>1.0-SNAPSHOT</version>-->
+    <!--            </dependency>-->
+    <!--            <dependency>-->
+    <!--                <groupId>spring-cloud-plus</groupId>-->
+    <!--                <artifactId>common-exception</artifactId>-->
+    <!--                <version>1.0-SNAPSHOT</version>-->
+    <!--            </dependency>-->
+    <!--            <dependency>-->
+    <!--                <groupId>spring-cloud-plus</groupId>-->
+    <!--                <artifactId>common-shiro</artifactId>-->
+    <!--                <version>1.0-SNAPSHOT</version>-->
+    <!--            </dependency>-->
+    <!--            <dependency>-->
+    <!--                <groupId>spring-cloud-plus</groupId>-->
+    <!--                <artifactId>common-spring</artifactId>-->
+    <!--                <version>1.0-SNAPSHOT</version>-->
+    <!--            </dependency>-->
+    <!--            <dependency>-->
+    <!--                <groupId>spring-cloud-plus</groupId>-->
+    <!--                <artifactId>common-swagger</artifactId>-->
+    <!--                <version>1.0-SNAPSHOT</version>-->
+    <!--            </dependency>-->
+    <!--            <dependency>-->
+    <!--                <groupId>spring-cloud-plus</groupId>-->
+    <!--                <artifactId>common-util</artifactId>-->
+    <!--                <version>1.0-SNAPSHOT</version>-->
+    <!--            </dependency>-->
+    <!--            <dependency>-->
+    <!--                <groupId>spring-cloud-plus</groupId>-->
+    <!--                <artifactId>common-log</artifactId>-->
+    <!--                <version>1.0-SNAPSHOT</version>-->
+    <!--            </dependency>-->
+
+    <!--            <dependency>-->
+    <!--                <groupId>spring-cloud-plus</groupId>-->
+    <!--                <artifactId>common-feign</artifactId>-->
+    <!--                <version>1.0-SNAPSHOT</version>-->
+    <!--            </dependency>-->
+
+    <!--            &lt;!&ndash;            <dependency>&ndash;&gt;-->
+    <!--            &lt;!&ndash;                <groupId>org.springframework.data</groupId>&ndash;&gt;-->
+    <!--            &lt;!&ndash;                <artifactId>spring-data-commons</artifactId>&ndash;&gt;-->
+    <!--            &lt;!&ndash;                <version>2.0.0.RELEASE</version>&ndash;&gt;-->
+    <!--            &lt;!&ndash;            </dependency>&ndash;&gt;-->
+    <!--            &lt;!&ndash;            <dependency>&ndash;&gt;-->
+    <!--            &lt;!&ndash;                <groupId>io.github.openfeign</groupId>&ndash;&gt;-->
+    <!--            &lt;!&ndash;                <artifactId>feign-core</artifactId>&ndash;&gt;-->
+    <!--            &lt;!&ndash;                <version>10.5.1</version>&ndash;&gt;-->
+    <!--            &lt;!&ndash;            </dependency>&ndash;&gt;-->
+    <!--            <dependency>-->
+    <!--                <groupId>com.netflix.hystrix</groupId>-->
+    <!--                <artifactId>hystrix-core</artifactId>-->
+    <!--                <version>1.4.26</version>-->
+    <!--            </dependency>-->
+    <!--            <dependency>-->
+    <!--                <groupId>javax.persistence</groupId>-->
+    <!--                <artifactId>persistence-api</artifactId>-->
+    <!--                <version>1.0</version>-->
+    <!--            </dependency>-->
+    <!--            <dependency>-->
+    <!--                <groupId>mysql</groupId>-->
+    <!--                <artifactId>mysql-connector-java</artifactId>-->
+    <!--                <version>5.1.47</version>-->
+    <!--            </dependency>-->
+    <!--            <dependency>-->
+    <!--                <groupId>com.netflix.feign</groupId>-->
+    <!--                <artifactId>feign-slf4j</artifactId>-->
+    <!--                <version>8.14.4</version>-->
+    <!--            </dependency>-->
+    <!--            <dependency>-->
+    <!--                <groupId>io.github.openfeign</groupId>-->
+    <!--                <artifactId>feign-httpclient</artifactId>-->
+    <!--                <version>9.5.1</version>-->
+    <!--            </dependency>-->
+
+    <!--            <dependency>-->
+    <!--                <groupId>org.springframework.cloud</groupId>-->
+    <!--                <artifactId>spring-cloud-openfeign-core</artifactId>-->
+    <!--                <version>2.0.0.RELEASE</version>-->
+    <!--            </dependency>-->
+    <!--            <dependency>-->
+    <!--                <groupId>org.springframework.cloud</groupId>-->
+    <!--                <artifactId>spring-cloud-starter-openfeign</artifactId>-->
+    <!--                <version>2.0.0.RELEASE</version>-->
+    <!--            </dependency>-->
+    <!--            <dependency>-->
+    <!--                <groupId>spring-cloud-plus</groupId>-->
+    <!--                <artifactId>common-apm</artifactId>-->
+    <!--                <version>1.0-SNAPSHOT</version>-->
+    <!--            </dependency>-->
+
+    <!--            <dependency>-->
+    <!--                <groupId>spring-cloud-plus</groupId>-->
+    <!--                <artifactId>spring-cloud-feign-api</artifactId>-->
+    <!--                <version>1.0-SNAPSHOT</version>-->
+    <!--            </dependency>-->
+    <!--            <dependency>-->
+    <!--                <groupId>spring-cloud-plus</groupId>-->
+    <!--                <artifactId>spring-cloud-feign-api</artifactId>-->
+    <!--                <version>1.0-SNAPSHOT</version>-->
+    <!--            </dependency>-->
+    <!--            <dependency>-->
+    <!--                <groupId>redis.clients</groupId>-->
+    <!--                <artifactId>jedis</artifactId>-->
+    <!--                <version>2.9.0</version>-->
+    <!--            </dependency>-->
+    <!--            <dependency>-->
+    <!--                <groupId>org.springframework.boot</groupId>-->
+    <!--                <artifactId>spring-boot-starter-data-redis</artifactId>-->
+    <!--                <version>2.0.0.RELEASE</version>-->
+    <!--            </dependency>-->
+
+    <!--            <dependency>-->
+    <!--                <groupId>tk.mybatis</groupId>-->
+    <!--                <artifactId>mapper-spring-boot-starter</artifactId>-->
+    <!--                <version>2.1.5</version>-->
+    <!--            </dependency>-->
+    <!--            <dependency>-->
+    <!--                <groupId>com.netflix.archaius</groupId>-->
+    <!--                <artifactId>archaius-core</artifactId>-->
+    <!--                <version>0.7.6</version>-->
+    <!--            </dependency>-->
+    <!--            <dependency>-->
+    <!--                <groupId>commons-logging</groupId>-->
+    <!--                <artifactId>commons-logging</artifactId>-->
+    <!--                <version>1.1.3</version>-->
+    <!--            </dependency>-->
+    <!--        </dependencies>-->
+
+    <!--    </dependencyManagement>-->
+
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>javax.persistence</groupId>
+                <artifactId>persistence-api</artifactId>
+                <version>1.0</version>
+            </dependency>
+            <dependency>
+                <groupId>com.netflix.feign</groupId>
+                <artifactId>feign-slf4j</artifactId>
+                <version>8.14.4</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.openfeign</groupId>
+                <artifactId>feign-httpclient</artifactId>
+                <version>9.5.1</version>
+            </dependency>
+            <dependency>
+                <groupId>tk.mybatis</groupId>
+                <artifactId>mapper-spring-boot-starter</artifactId>
+                <version>2.1.5</version>
+            </dependency>
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-starter-client</artifactId>
+                <version>2.0.0</version>
+            </dependency>
+            <dependency>
+                <groupId>spring-cloud-plus</groupId>
+                <artifactId>common-apm</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>spring-cloud-plus</groupId>
+                <artifactId>spring-cloud-feign-api</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>spring-cloud-plus</groupId>
+                <artifactId>common-service-base</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>spring-cloud-plus</groupId>
+                <artifactId>common-controller-base</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>spring-cloud-plus</groupId>
+                <artifactId>common-cache</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>spring-cloud-plus</groupId>
+                <artifactId>common-constant</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>spring-cloud-plus</groupId>
+                <artifactId>common-constraints</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>spring-cloud-plus</groupId>
+                <artifactId>common-exception</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>spring-cloud-plus</groupId>
+                <artifactId>common-shiro</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>spring-cloud-plus</groupId>
+                <artifactId>common-spring</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>spring-cloud-plus</groupId>
+                <artifactId>common-swagger</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>spring-cloud-plus</groupId>
+                <artifactId>common-util</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>spring-cloud-plus</groupId>
+                <artifactId>common-log</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>spring-cloud-plus</groupId>
+                <artifactId>common-feign</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+                <version>0.9.0.RELEASE</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+                <version>0.9.0.RELEASE</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.boot</groupId>
+                <artifactId>nacos-config-spring-boot-starter</artifactId>
+                <version>0.2.1</version>
+            </dependency>
+            <dependency>
+                <groupId>io.seata</groupId>
+                <artifactId>seata-all</artifactId>
+                <version>1.3.0</version>
+            </dependency>
+            <dependency>
+                <groupId>io.seata</groupId>
+                <artifactId>seata-spring-boot-starter</artifactId>
+                <version>1.3.0</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <!--MAVEN打包选择运行环境-->
+    <!-- 1:local(默认) 本地 2:dev:开发环境 3:test 4:uat 用户验收测试 5.prod:生产环境 -->
+    <profiles>
+        <profile>
+            <id>local</id>
+            <properties>
+                <profileActive>local</profileActive>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <profileActive>dev</profileActive>
+            </properties>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>test</id>
+            <properties>
+                <profileActive>test</profileActive>
+            </properties>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>uat</id>
+            <properties>
+                <profileActive>uat</profileActive>
+            </properties>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>prod</id>
+            <properties>
+                <profileActive>prod</profileActive>
+            </properties>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+        </profile>
+    </profiles>
+
+
+    <repositories>
+        <!--阿里云仓库-->
+        <repository>
+            <id>aliyun</id>
+            <name>aliyun-maven</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+        </repository>
+        <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://maven.aliyun.com/repository/spring</url>
+        </repository>
+        <!-- 中央仓库 -->
+        <repository>
+            <id>central</id>
+            <name>maven-central</name>
+            <url>http://central.maven.org/maven2/</url>
+        </repository>
+    </repositories>
+
+
+    <!--    <build>-->
+    <!--        <plugins>-->
+
+    <!--            &lt;!&ndash; PMD插件 &ndash;&gt;-->
+    <!--            <plugin>-->
+    <!--                <groupId>org.apache.maven.plugins</groupId>-->
+    <!--                <artifactId>maven-pmd-plugin</artifactId>-->
+    <!--                <version>3.8</version>-->
+    <!--                <configuration>-->
+    <!--                    <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>-->
+    <!--                    <targetJdk>${java.version}</targetJdk>-->
+    <!--                    <printFailingErrors>true</printFailingErrors>-->
+    <!--                    &lt;!&ndash; 代码检查规则 &ndash;&gt;-->
+    <!--                    <rulesets>-->
+    <!--                        <ruleset>rulesets/java/ali-comment.xml</ruleset>-->
+    <!--                        <ruleset>rulesets/java/ali-concurrent.xml</ruleset>-->
+    <!--                        <ruleset>rulesets/java/ali-constant.xml</ruleset>-->
+    <!--                        <ruleset>rulesets/java/ali-exception.xml</ruleset>-->
+    <!--                        <ruleset>rulesets/java/ali-flowcontrol.xml</ruleset>-->
+    <!--                        <ruleset>rulesets/java/ali-naming.xml</ruleset>-->
+    <!--                        <ruleset>rulesets/java/ali-oop.xml</ruleset>-->
+    <!--                        <ruleset>rulesets/java/ali-orm.xml</ruleset>-->
+    <!--                        <ruleset>rulesets/java/ali-other.xml</ruleset>-->
+    <!--                        <ruleset>rulesets/java/ali-set.xml</ruleset>-->
+    <!--                        <ruleset>style/checkstyle.xml</ruleset>-->
+    <!--                    </rulesets>-->
+    <!--                </configuration>-->
+    <!--                <executions>-->
+    <!--                    &lt;!&ndash; 绑定pmd:check到verify生命周期 &ndash;&gt;-->
+    <!--                    <execution>-->
+    <!--                        <id>pmd-check-verify</id>-->
+    <!--                        <phase>verify</phase>-->
+    <!--                        <goals>-->
+    <!--                            <goal>check</goal>-->
+    <!--                        </goals>-->
+    <!--                    </execution>-->
+    <!--                    &lt;!&ndash; 绑定pmd:pmd到site生命周期 &ndash;&gt;-->
+    <!--                    <execution>-->
+    <!--                        <id>pmd-pmd-site</id>-->
+    <!--                        <phase>site</phase>-->
+    <!--                        <goals>-->
+    <!--                            <goal>pmd</goal>-->
+    <!--                        </goals>-->
+    <!--                    </execution>-->
+    <!--                </executions>-->
+    <!--                &lt;!&ndash; p3c依赖 &ndash;&gt;-->
+    <!--                <dependencies>-->
+    <!--                    <dependency>-->
+    <!--                        <groupId>com.alibaba.p3c</groupId>-->
+    <!--                        <artifactId>p3c-pmd</artifactId>-->
+    <!--                        <version>1.3.5</version>-->
+    <!--                    </dependency>-->
+    <!--                </dependencies>-->
+    <!--            </plugin>-->
+    <!--            &lt;!&ndash; 编译插件 Spring-Boot 项目不需要设置，因为parent中已设置 &ndash;&gt;-->
+    <!--            <plugin>-->
+    <!--                <groupId>org.apache.maven.plugins</groupId>-->
+    <!--                <artifactId>maven-compiler-plugin</artifactId>-->
+    <!--                <version>3.7.0</version>-->
+    <!--                <configuration>-->
+    <!--                    <source>${java.version}</source>-->
+    <!--                    <target>${java.version}</target>-->
+    <!--                </configuration>-->
+    <!--            </plugin>-->
+
+    <!--            <plugin>-->
+    <!--                <artifactId>maven-checkstyle-plugin</artifactId>-->
+    <!--                <version>3.0.0</version>-->
+    <!--                <executions>-->
+    <!--                    <execution>-->
+    <!--                        &lt;!&ndash; 绑定pmd:pmd到validate生命周期，在validate时会自动进行代码规范检查 &ndash;&gt;-->
+    <!--                        <id>validate</id>-->
+    <!--                        <phase>validate</phase>-->
+    <!--                        <configuration>-->
+    <!--                            &lt;!&ndash; 配置文件的路径，在style文件夹下 &ndash;&gt;-->
+    <!--                            <configLocation>style/checkstyle.xml</configLocation>-->
+    <!--                            <encoding>UTF-8</encoding>-->
+    <!--                            <consoleOutput>true</consoleOutput>-->
+    <!--                            <failsOnError>true</failsOnError>-->
+    <!--                            <includeTestSourceDirectory>false</includeTestSourceDirectory>-->
+    <!--                        </configuration>-->
+    <!--                        <goals>-->
+    <!--                            <goal>check</goal>-->
+    <!--                        </goals>-->
+    <!--                    </execution>-->
+    <!--                </executions>-->
+    <!--            </plugin>-->
+    <!--        </plugins>-->
+    <!--    </build>-->
+
+    <!--    &lt;!&ndash; 用于生成错误到代码内容的链接 &ndash;&gt;-->
+    <!--    <reporting>-->
+    <!--        <plugins>-->
+    <!--            <plugin>-->
+    <!--                <groupId>org.apache.maven.plugins</groupId>-->
+    <!--                <artifactId>maven-jxr-plugin</artifactId>-->
+    <!--                <version>2.3</version>-->
+    <!--            </plugin>-->
+    <!--        </plugins>-->
+    <!--    </reporting>-->
+</project>

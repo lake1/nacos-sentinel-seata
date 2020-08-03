@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+
+    <include resource="hu/common/logging/logback/defaults.xml"/>
+
+    <!-- 不同环境的日志级别配置 -->
+    <springProfile name="local">
+        <logger name="hu.springcloud" level="DEBUG"/>
+        <logger name="logging.level.org.springframework.web" level="DEBUG"/>
+        <logger name="logging.level.root" level="INFO"/>
+        <logger name="hu.common.mybatis.plugin" level="DEBUG"/>
+    </springProfile>
+    <springProfile name="dev">
+        <logger name="hu.springcloud" level="DEBUG"/>
+        <logger name="logging.level.org.springframework.web" level="DEBUG"/>
+        <logger name="logging.level.root" level="INFO"/>
+        <logger name="hu.common.mybatis.plugin" level="DEBUG"/>
+    </springProfile>
+    <springProfile name="test">
+        <logger name="hu.springcloud" level="DEBUG"/>
+        <logger name="logging.level.org.springframework.web" level="DEBUG"/>
+        <logger name="logging.level.root" level="INFO"/>
+        <logger name="hu.common.mybatis.plugin" level="DEBUG"/>
+    </springProfile>
+    <springProfile name="uat">
+        <logger name="hu.springcloud" level="DEBUG"/>
+        <logger name="logging.level.org.springframework.web" level="DEBUG"/>
+        <logger name="logging.level.root" level="INFO"/>
+        <logger name="hu.common.mybatis.plugin" level="DEBUG"/>
+    </springProfile>
+
+
+</configuration>
